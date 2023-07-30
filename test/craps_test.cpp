@@ -1,6 +1,5 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
-#include <iostream>
 #include "roll.h"
 #include "die.h"
 #include "shooter.h"
@@ -37,13 +36,14 @@ Roll roll(die1, die2);
     }
 }
 
-TEST_CASE("Testing Shooter return a Roll") {
-	Shooter shoot;
-	Die die1, die2;
+TEST_CASE("Testing shooter return a roll value") 
+{
+Shooter player;
+Die die1, die2;
 
 	for(int i = 0; i < 10; i++){
 
-		Roll* roll = shoot.throw_die(die1, die2);
+		Roll* roll = player.throw_die(die1, die2);
 		REQUIRE(roll->roll_value() >= 2);
 		REQUIRE(roll->roll_value() <= 12);
 	}
@@ -87,9 +87,9 @@ TEST_CASE("ComeOutPhase Test")
 }
 
 
-TEST_CASE("POINT PHASE")
+TEST_CASE("point phase test")
 {
-	PointPhase p(4);
+	PointPhase p(2);
 	Die die1, die2;
 
 
@@ -99,7 +99,7 @@ TEST_CASE("POINT PHASE")
 	{
 		diceroll->roll_die();
 
-		if(diceroll->roll_value() == 4)
+		if(diceroll->roll_value() == 2)
 		{
 			REQUIRE(p.get_outcome(diceroll) == RollOutcome::point);
 		}

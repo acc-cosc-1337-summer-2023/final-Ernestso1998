@@ -1,5 +1,3 @@
-#include <iostream>
-#include <cstdlib>
 #include "phase.h"
 
 
@@ -8,7 +6,7 @@
 class PointPhase : public Phase
 {
 public:
-	PointPhase(int p);
+	PointPhase(int p){};
 	virtual RollOutcome get_outcome(Roll* roll) override;
 
 	private:
