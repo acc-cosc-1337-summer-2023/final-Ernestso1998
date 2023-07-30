@@ -1,13 +1,14 @@
 #include <iostream>
-#include <cstdlib>
 #include <vector>
 #include "roll.h"
 
+#ifndef SHOOTER_H_
+#define SHOOTER_H_
 
 class Shooter
 {
 public:
-	Shooter();
+	Shooter() {};
 
 	~Shooter();
 
@@ -18,4 +19,4 @@ public:
 private:
 	std::vector<Roll*> rolls;
 };
-
+#endif
