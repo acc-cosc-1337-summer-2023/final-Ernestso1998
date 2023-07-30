@@ -2,7 +2,7 @@
 #include "roll.h"
 
 
-Roll::Roll(Die& dice1, Die& dice2) : die1(dice1) , die2(dice2){};
+Roll::Roll(Die& die1, Die& die2) : die1(die1) , die2(die2){};
 
 void Roll::roll_die()
 {

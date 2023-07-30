@@ -2,10 +2,12 @@
 #include <cstdlib>
 #include "die.h"
 
+#ifndef ROLL_H
+#define ROLL_H
 class Roll
 {
 public:
-    Roll(Die& dice1, Die& dice2);
+    Roll(Die& die1, Die& die2);
     void roll_die();
     int roll_value() const;
 
@@ -15,3 +17,4 @@ private:
     int value;
     bool rolled = false;
 }; 
+#endif
