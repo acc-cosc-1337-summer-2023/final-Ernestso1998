@@ -27,9 +27,10 @@ Die die1, die2;
 Roll roll(die1, die2);
     for (int i = 0; i < 10; ++i) {
         roll.roll_die();
-        int result = roll.roll_value();
-        REQUIRE(result >= 2);
-        REQUIRE(result <= 12);
+        int sum = roll.roll_value();
+        REQUIRE(sum >= 2);
+        REQUIRE(sum <= 12);
     }
 }
+
 
