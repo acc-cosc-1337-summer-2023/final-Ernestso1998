@@ -1,5 +1,8 @@
 #include <iostream>
 #include <cstdlib>
+#ifndef DIE_H
+#define DIE_H
+
 class Die
 {
 public:
@@ -7,5 +10,7 @@ public:
     int rolled_value() const;
 private:
     int roll_value;
-    int sides{6};
+    int sides {6};
 };
+
+#endif
