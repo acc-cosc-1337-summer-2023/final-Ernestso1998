@@ -3,6 +3,12 @@
 #include "shooter.h"
 
 
+Shooter::~Shooter() {
+    for (Roll* roll : rolls) {
+        delete roll;
+    }
+}
+
 Roll* Shooter::throw_die(Die& die1, Die& die2) {
     Roll* roll = new Roll(die1, die2);
     roll->roll_die();
@@ -16,10 +22,4 @@ std::ostream& operator<<(std::ostream& os, const Shooter& shooter) {
         os << "Rolled " << roll->roll_value() << std::endl;
     }
     return os;
-}
-Shooter::~Shooter() {
-    for (Roll* roll : rolls) {
-        delete roll;
-    }
-    rolls.clear();
 }
